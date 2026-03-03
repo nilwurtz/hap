@@ -5,11 +5,21 @@ const badge = document.getElementById("device-badge")!
 const label = document.getElementById("device-label")!
 
 const isCoarse = window.matchMedia("(pointer: coarse)").matches
+const isIos = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+
 if (isCoarse) {
   badge.classList.add("mobile")
-  label.textContent = "Mobile detected — tap to feel haptics"
+  label.textContent = isIos
+    ? "iOS detected — all patterns feel the same (browser limitation)"
+    : "Android detected — tap to feel haptics"
 } else {
   label.textContent = "Desktop — use Force button or open on mobile"
+}
+
+if (isIos) {
+  document.querySelectorAll<HTMLElement>(".ios-note").forEach(el => {
+    el.hidden = false
+  })
 }
 
 // Button bindings
