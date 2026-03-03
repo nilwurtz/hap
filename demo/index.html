@@ -182,6 +182,14 @@
         white-space: nowrap;
       }
 
+      .gh-link {
+        display: inline-block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        color: var(--accent-hover);
+        text-decoration: none;
+      }
+
       .card-note {
         margin-top: 0.75rem;
         font-size: 0.78rem;
@@ -262,13 +270,13 @@
       </div>
 
       <div class="card">
-        <h2>Install</h2>
-        <div class="code-block"><span class="kw">npm</span> install haptic</div>
+        <h2>Usage</h2>
         <div class="code-block"><span class="kw">import</span> { <span class="fn">haptic</span> } <span class="kw">from</span> <span class="str">"haptic"</span>
 
 button.addEventListener(<span class="str">"click"</span>, () => {
   <span class="fn">haptic</span>(<span class="num">50</span>)
 })</div>
+        <a class="gh-link" href="https://github.com/nilwurtz/hap" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
     </main>
 
