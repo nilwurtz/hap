@@ -1,5 +1,8 @@
 import { haptic } from "../src/index"
 
+// iOS Safari requires a touchstart listener on the document for :active to fire on buttons
+document.addEventListener("touchstart", () => {}, { passive: true })
+
 // Device detection badge
 const badge = document.getElementById("device-badge")!
 const label = document.getElementById("device-label")!
